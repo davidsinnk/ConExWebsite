@@ -1,0 +1,40 @@
+﻿@page "/dynamic"
+<h3>Component1</h3>
+
+<h1>Hellopoooo NURSE!!! </h1>
+
+<br />
+<br />
+
+<button @onclick="SaySomething">What Do You Think</button>
+<button @onclick="SaySomethingElse">Say something Else</button>
+<br />
+<br />
+
+<div>
+    @longMessage
+
+</div>
+
+<h3>I just gotta say @message</h3>
+
+@code {
+
+
+    private string goodbye = "I am outaa heeeeerrreeeeee...";
+    private string hello = "Helllloooooo NURSE!!!!";
+
+    private  string message;
+    private string longMessage;
+
+    private void SaySomething()
+    {
+        message = (message == goodbye)? hello : goodbye;
+    }
+
+    private void SaySomethingElse()
+    {
+        longMessage = message + " and furthermore I just want to ramble about " + message + "but don't for get about " + message;
+
+       }
+}
